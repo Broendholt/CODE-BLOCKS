@@ -1,0 +1,58 @@
+/*========================================
+2d array print for saving time
+Made by Christopher Brøndholt
+=========================================*/
+
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+
+  //the first integer is the amount of x values
+  //the second integer is the amount of y values
+  //"ArrayName" is the name of the array (REMEMBER " ")
+  //"ArrayType" is the type of the array (REMEMBER " ")
+  
+  //EXAMPLE:  makeArray(20, 20, "robotGrid", "int"); 
+  
+  //===========================================
+  //==============CUSTOMIZE ARRAY==============
+  
+  makeArray(40, 40, "ArrayName", "int");
+  
+  //==============CUSTOMIZE ARRAY==============
+  //===========================================
+
+  //The last thing to do know is to upload the code 
+  //and open Serial monitor
+}
+
+void makeArray(int Mapx, int Mapy, String Name, String type){
+  
+  
+  Serial.print(type);
+  Serial.print(" ");
+  Serial.print(Name);
+  Serial.print("[");
+  Serial.print(Mapx);
+  Serial.print("][");
+  Serial.print(Mapy);
+  Serial.print("]");
+  Serial.print(" = ");
+    
+  Serial.println("{"); 
+  for (int y = 0; y < Mapy; y++){
+      Serial.print("{");     
+    for (int x = 0; x < Mapx; x++){   
+        Serial.print("0,");
+      }
+      Serial.println("},");                              
+    }
+    Serial.println("};"); 
+    Serial.println(" ");
+    Serial.println("Remeber arrays start at 0 ;)"); 
+}
+
+
+void loop() {
+}
